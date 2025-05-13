@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  generatedapi:
+    image: generatedapi
+    build:
+      context: .
+      dockerfile: src/GeneratedAPI/Dockerfile   
+    ports:
+    - "8080:5000"
+    - "8081:8081"
