@@ -8,4 +8,4 @@ services:
       dockerfile: src/GeneratedAPI/Dockerfile   
     ports:
     - "8080:5000"
-    - "8081:8081"
+    - "8081:5001"

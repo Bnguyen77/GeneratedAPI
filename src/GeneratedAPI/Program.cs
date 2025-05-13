@@ -26,7 +26,16 @@ namespace GeneratedAPI
 			Host.CreateDefaultBuilder(args)
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
+					webBuilder.ConfigureKestrel(serverOptions =>
+					{
+						serverOptions.ListenAnyIP(5000); // HTTP
+						serverOptions.ListenAnyIP(5001, listenOptions =>
+						{
+							listenOptions.UseHttps(); // HTTPS
+						});
+					});
 					webBuilder.UseStartup<Startup>();
 				});
+	
 	}
 }
